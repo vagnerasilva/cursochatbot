@@ -3,6 +3,7 @@ curso de chatbot
 
 
 Material do Curso ChatBot
+<img src="http://bluedev.com.br/wp-content/uploads/2017/12/chatbot-person.png" class="robo-header__logo" width="128" height="128">
 
 Autor 
 
@@ -18,3 +19,5 @@ VAGNER
 @FocaNoCodigo
 
 www.focanocodigo.com.br
+
+<img src="http://focanocodigo.esy.es/img/focanocodigo.jpg" class="robo-header__logo" width="100%" height="228">
