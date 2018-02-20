@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CHAT BOT AULA PAGE </title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.css'>
+
+
+	<script>
+		window.fbMessengerPlugins = window.fbMessengerPlugins || {
+			init: function () {
+				FB.init({
+					appId            : '1678638095724206',
+					autoLogAppEvents : true,
+					xfbml            : true,
+					version          : 'v2.10'
+				});
+			}, callable: []
+		};
+		window.fbAsyncInit = window.fbAsyncInit || function () {
+			window.fbMessengerPlugins.callable.forEach(function (item) { item(); });
+			window.fbMessengerPlugins.init();
+		};
+		setTimeout(function () {
+			(function (d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) { return; }
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		}, 0);
+		</script>
+		
+		<div
+			class="fb-customerchat"
+			page_id="327817720956631"
+			ref="">
+		</div>
+	
+  
+</head>
+
+<body style="
+    background-color: white;
+"  >
+  <div ng-app="DemoApp" flex layout="column">
+  <div flex ng-controller="MainController" layout="column">
+    <section flex>
+      <md-content layout-padding="">
+        <h1>CHAT BOT AULA PAGE </h1>
+        <div>Loaded data form Page <strong>{{currentPage}}</strong></div>
+       <!-- <div>Mensagens sem resposta <strong>{{dados.length}}</strong></div> -->
+                      
+      </md-content>
+
+<!--
+<div layout="row" layout-padding="" layout-wrap="" layout-margin="" ng-cloak="" layout-align="space-around" class="whiteframedemoDirectiveInterpolation" >
+
+  <div ng-repeat="dado in chamados track by $index "     class="padded" md-whiteframe="{{height}}" flex="100" flex-gt-sm="50" layout="column" layout-align="center center" ng-init="height = 3" ng-mouseenter="height = 6" ng-mouseleave="height = 3">
+    <span ng-non-bindable="">:</span>
+    <span>facebookname: {{dado.fb_first_name}}</span>
+    <span>    Conteúdo sem antedimento: {{dado.intencao}}</span>
+  </div>
+
+</div>
+-->
+    </section>
+
+    <section layout="row" layout-padding="">
+
+      <cl-paging flex cl-pages="paging.total" , cl-steps="6" , cl-page-changed="paging.onPageChanged()" , cl-align="center center" , cl-current-page="paging.current"></cl-paging>
+
+    </section>
+
+  </div>
+</div>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js'></script>
+<script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js'></script>
+<script src='https://rawgit.com/Crawlink/material-angular-paging/master/build/dist.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+            <!-- Servicos Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-messaging.js"></script>
+            <!-- Servicos Firebase -->
+
+
+ 
+
+
+
+
+
+
+</body>
+</html>
