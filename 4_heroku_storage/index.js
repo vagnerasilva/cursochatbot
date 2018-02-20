@@ -59,15 +59,58 @@ var usersConsultaObj ={}
 			res.send(usersConsultaObj) 
 		  console.log('#### Lista de pizzas que existem  #####')
 		 
-		  
+		
   });
-}),
+});
+
+/// ## Modelo de estrutura da colecao Pedidos ####///
+
+  var cadastroDbSchema = new Schema({
+  senderId: String,
+  profile:  {},
+  cadastro:  {},
+	messages: [{}],
+	pedidos:  [{}]
+}, {collection: 'infoPedidos'});
+
+/// ## Modelo de estrutura da colecao Pedidos ####///
 
 
+// Chamada de api Post para cadastrar o pedido enviado
+app.post('/cadastro', (req, res) =>{
+	let infoRaw= req.body.data
+  console.log(infoRaw)
 
+	let dados ={
+		info:infoRaw  // Montando estrutura que sera salva
+	}
+		var cadastroDb = mongoose.model('cadastroDb',  cadastroDbSchema);
+		var usersObj ={}
+		cadastroDb
+				.findOneAndUpdate({ "senderId": infoRaw.senderId },
+					{  $set: {
+											'cadastro': {
+													email:"email@email.com",
+													cpf  :dados.info.cpf
+											},
+											profile:  dados.info.profile,
+											messages: dados.info.messages,
+											pedidos:  dados.info.pedidos
+									 
+						}
+					},
+					{ upsert: true },
+					function(err, result) {
+						if (err) res.send(err);  /// Em caso de erro enviar o erro na api para Verificar
+					     console.log(err) 
+							
+							console.log("#### cadastrado #####" )
+							console.log(result)
+							res.send(" cadastrado efetuado com sucesso") // Se tudo certo devolver esse cara
+					});
+});
 
-
-
+// Chamada de api Post para cadastrar o pedido enviado
 
 // ROUTES
 app.get('/teste', function(req, res) {
