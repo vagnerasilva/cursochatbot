@@ -8,7 +8,11 @@ configuracao do banco no .env
 
 
 utilizar robomongo para visualizar dados no mlab
+https://robomongo.org/
 
+Download
+https://robomongo.org/download
+<img src="/static/robomongo-128x128-129df2f1.png" class="robo-header__logo" width="128" height="128">
 
 Exemplo de json para fazer post 
 
