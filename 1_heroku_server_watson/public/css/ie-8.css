@@ -1,0 +1,9 @@
+.sf-menu > li {
+	padding-top: 7px;
+}
+.sf-menu ul:before {
+	display: none;
+}
+.sf-menu ul {
+	left: 30px;
+}

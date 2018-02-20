@@ -1,0 +1,23 @@
+{
+  "name": "SPAheroku_VAGNER",
+  "version": "1.0.0",
+  "description": "",
+  "author": "vagner",
+  "license": "ISC",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IBM-Bluemix/get-started-node"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "cloudant": "^1.7.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "nodemon": "^1.11.0",
+    "watson-developer-cloud": "^2.29.0"
+  }
+}

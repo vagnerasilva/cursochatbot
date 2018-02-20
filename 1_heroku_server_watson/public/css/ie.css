@@ -1,0 +1,18 @@
+#contact-form input[type='text'], #contact-form textarea {width: 100%;}
+#contact-form .contact-form-loader {display: none;}
+.bd-ra { behavior:url(js/PIE.htc); position:relative;}
+.owl-carousel .owl-next,
+.owl-carousel .owl-prev {
+	width: 24px;
+	height: 41px;
+	background-image: url(../images/arrows_for_ie.png);
+}
+.owl-carousel .owl-next {background-position: -24px -40px }
+.owl-carousel .owl-prev {background-position: 0 0px}
+.owl-carousel .owl-next:hover {background-position: 0 -40px}
+.owl-carousel .owl-prev:hover {background-position: -24px 0}
+.owl-carousel .owl-next:before { display: none; }
+.owl-carousel .owl-prev:before { display: none; }
+.sf-menu > li {
+	padding-top: 7px;
+}

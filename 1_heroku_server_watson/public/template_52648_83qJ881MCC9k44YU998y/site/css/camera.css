@@ -1,0 +1,533 @@
+/**************************
+*
+*	GENERAL
+*
+**************************/
+.camera_container {
+	padding-bottom: 68.125%;
+	position: relative;
+	overflow: hidden;
+}
+@media (max-width:1479px) {
+	.camera_container {padding-bottom: 975px;}
+}
+.camera_wrap a, .camera_wrap img, 
+.camera_wrap ol, .camera_wrap ul, .camera_wrap li,
+.camera_wrap table, .camera_wrap tbody, .camera_wrap tfoot, .camera_wrap thead, .camera_wrap tr, .camera_wrap th, .camera_wrap td
+.camera_thumbs_wrap a, .camera_thumbs_wrap img, 
+.camera_thumbs_wrap ol, .camera_thumbs_wrap ul, .camera_thumbs_wrap li,
+.camera_thumbs_wrap table, .camera_thumbs_wrap tbody, .camera_thumbs_wrap tfoot, .camera_thumbs_wrap thead, .camera_thumbs_wrap tr, .camera_thumbs_wrap th, .camera_thumbs_wrap td {
+	background: none;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	list-style: none
+}
+.camera_wrap {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	height: 40px;
+	margin-bottom: 0 !important;
+}
+.camera_wrap img {
+	max-width: none!important;
+}
+.camera_fakehover {
+	height: 100%;
+	min-height: 60px;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+.camera_wrap {
+	width: 100%;
+}
+.camera_src {
+	display: none;
+}
+.cameraCont, .cameraContents {
+	height: 100%;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+.cameraSlide {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+.cameraContent {
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+.camera_target {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	text-align: left;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+}
+.camera_overlayer {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+}
+.camera_target_content {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+.camera_target_content .camera_link {
+    background: url(../images/blank.gif);
+	display: block;
+	height: 100%;
+	text-decoration: none;
+}
+.camera_loader {
+    background: #fff url(../images/camera-loader.gif) no-repeat center;
+	background: rgba(255, 255, 255, 0.9) url(../images/camera-loader.gif) no-repeat center;
+	border: 1px solid #ffffff;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	behavior: url(js/pie.htc);
+	height: 36px;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	margin: -18px 0 0 -18px;
+	top: 50%;
+	width: 36px;
+	z-index: 3;
+}
+.camera_bar {
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 3;
+	display: none;
+}
+.camera_thumbs_wrap.camera_left .camera_bar, .camera_thumbs_wrap.camera_right .camera_bar {
+	height: 100%;
+	position: absolute;
+	width: auto;
+}
+.camera_thumbs_wrap.camera_bottom .camera_bar, .camera_thumbs_wrap.camera_top .camera_bar {
+	height: auto;
+	position: absolute;
+	width: 100%;
+}
+.camera_nav_cont {
+	height: 65px;
+	overflow: hidden;
+	position: absolute;
+	right: 9px;
+	top: 15px;
+	width: 120px;
+	z-index: 4;
+}
+.camera_caption {
+	display: block;
+	color: #9fa9a9;
+	font-weight: 300;
+	text-align: center;
+	font-size: 20px;
+	line-height: 25px;
+	background: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 38%;
+}
+.camera_caption h3 {
+	font-size: 60px;
+	line-height: 70px;
+	color: #fff;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+.camera_caption p {
+	font-size: 36px;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin-top: 5%;
+}
+.camera_caption .bd-ra {
+	height: 94px;
+	width: 94px;
+	line-height: 89px;
+	text-align: center;
+	background: #dcd6d6;
+	font-family: "FontAwesome";
+	color: #fff;
+	font-size: 60px;
+	line-height: 94px;
+	color: #423e3e;
+	margin: 80px 50px 0;
+	display: inline-block;
+}
+.camera_caption .bd-ra span {line-height: 94px;}
+.camera_caption .bd-ra:hover {
+	background: #fff;
+}
+.camera_caption > div { }
+.camerarelative {
+	overflow: hidden;
+	position: relative;
+}
+.imgFake {
+	cursor: pointer;
+}
+.camera_prevThumbs {
+	bottom: 4px;
+	cursor: pointer;
+	left: 0;
+	position: absolute;
+	top: 4px;
+	visibility: hidden;
+	width: 30px;
+	z-index: 10;
+}
+.camera_prevThumbs div {
+	background: url(../images/camera_skins.png) no-repeat -160px 0;
+	display: block;
+	height: 40px;
+	margin-top: -20px;
+	position: absolute;
+	top: 50%;
+	width: 30px;
+}
+.camera_nextThumbs {
+	bottom: 4px;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 4px;
+	visibility: hidden;
+	width: 30px;
+	z-index: 10;
+}
+.camera_nextThumbs div {
+	background: url(../images/camera_skins.png) no-repeat -190px 0;
+	display: block;
+	height: 40px;
+	margin-top: -20px;
+	position: absolute;
+	top: 50%;
+	width: 30px;
+}
+.camera_command_wrap .hideNav {
+	display: none;
+}
+.camera_command_wrap {
+	left: 0;
+	position: relative;
+	right:0;
+	z-index: 4;
+}
+.camera_wrap .camera_pag {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.camera_wrap .camera_pag .camera_pag_ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	position: absolute;
+	top: 60%;
+	left: 0;
+	right: 0;
+}
+.camera_wrap .camera_pag .camera_pag_ul li {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	behavior: url(js/pie.htc);
+	cursor: pointer;
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	position: relative;
+	text-align: left;
+	text-indent: -9999px;
+	margin: 10px 2px 10px auto;
+}
+.camera_commands_emboss .camera_pag .camera_pag_ul li {
+}
+.camera_wrap .camera_pag .camera_pag_ul li > span {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 2px solid #e2d4d8;
+	behavior: url(js/pie.htc);
+	border-color: transparent;
+	background: #e2d4d8;
+	height: 19px;
+	width: 19px;
+	overflow: hidden;
+	position: absolute;
+	display: block;
+}
+.camera_pag .camera_pag_ul li.camera_hover > span { 
+	border-color: #fff
+}
+.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent > span {
+	width: 19px;
+	height: 19px;
+	background: #fff;
+	border-color: #fff;
+}
+.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent > span {
+	-moz-box-shadow: 0;
+	-webkit-box-shadow: 0;
+	width: 19px;
+	height: 19px;
+	box-shadow: 0;
+	background: #fff;
+}
+.camera_pag_ul li img {
+	display: none;
+	position: absolute;
+}
+.camera_pag_ul .thumb_arrow {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid;
+	top: 0;
+	left: 50%;
+	margin-left: -4px;
+	position: absolute;
+}
+.camera_prev, .camera_next, .camera_commands {
+	cursor: pointer;
+	height: 40px;
+	margin-top: -20px;
+	position: absolute;
+	top: 50%;
+	width: 40px;
+	z-index: 2;
+}
+.camera_prev {
+	left: 0;
+}
+.camera_prev > span {
+	background: url(../images/camera_skins.png) no-repeat 0 0;
+	display: block;
+	height: 40px;
+	width: 40px;
+}
+.camera_next {
+	right: 0;
+}
+.camera_next > span {
+	background: url(../images/camera_skins.png) no-repeat -40px 0;
+	display: block;
+	height: 40px;
+	width: 40px;
+}
+.camera_commands {
+	right: 41px;
+}
+.camera_commands > .camera_play {
+	background: url(../images/camera_skins.png) no-repeat -80px 0;
+	height: 40px;
+	width: 40px;
+}
+.camera_commands > .camera_stop {
+	background: url(../images/camera_skins.png) no-repeat -120px 0;
+	display: block;
+	height: 40px;
+	width: 40px;
+}
+.camera_thumbs_cont {
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	behavior: url(js/pie.htc);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.camera_commands_emboss .camera_thumbs_cont {
+	-moz-box-shadow:
+		0px 1px 0px rgba(255,255,255,1),
+		inset 0px 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow:
+		0px 1px 0px rgba(255,255,255,1),
+		inset 0px 1px 1px rgba(0,0,0,0.2);
+	box-shadow:
+		0px 1px 0px rgba(255,255,255,1),
+		inset 0px 1px 1px rgba(0,0,0,0.2);
+}
+.camera_thumbs_cont > div {
+	float: left;
+	width: 100%;
+}
+.camera_thumbs_cont ul {
+	overflow: hidden;
+	padding: 3px 4px 8px;
+	position: relative;
+	text-align: center;
+}
+.camera_thumbs_cont ul li {
+	display: inline;
+	padding: 0 4px;
+}
+.camera_thumbs_cont ul li > img {
+	border: 1px solid;
+	cursor: pointer;
+	margin-top: 5px;
+	vertical-align:bottom;
+}
+.camera_clear {
+	display: block;
+	clear: both;
+}
+.showIt {
+	display: none;
+}
+.camera_clear {
+	clear: both;
+	display: block;
+	height: 1px;
+	margin: -1px 0 25px;
+	position: relative;
+}
+.camera_pie { display: none; }
+@media only screen and (max-width: 1449px) {
+ .camera_caption p {margin-top: 0;}
+}
+@media only screen and (max-width: 1299px) { 
+	.camera_caption .bd-ra {margin-top: 50px;}
+}
+@media only screen and (max-width: 1199px) {
+	.camera_caption {
+		margin-top: 5%;
+		bottom: 37%;
+	}
+	.camera_caption h2 {
+		font-size: 50px;
+		line-height: 50px;
+	}
+	.camera_caption .bd-ra {
+		height: 64px;
+		width: 64px;
+		text-align: center;
+		background: #dcd6d6;
+		font-family: "FontAwesome";
+		color: #fff;
+		font-size: 37px;
+		line-height: 64px;
+		color: #423e3e;
+		margin: 30px 30px 0;
+		display: inline-block;
+	}
+	.camera_wrap .camera_pag .camera_pag_ul {top: 61%;}
+	.camera_caption .bd-ra span {line-height: 64px;}
+}
+@media only screen and (max-width: 979px) {
+	.camera_caption{
+	}
+	.camera_caption h3 {
+		font-size: 40px;
+		line-height: 45px;
+	}
+	.camera_caption p { font-size: 25px; }
+	.camera_wrap .camera_pag .camera_pag_ul {  }
+}
+@media only screen and (max-width: 767px) {
+	.camera_caption {
+		font-size: 20px;
+		line-height: 25px;
+	}
+	.camera_caption > div {
+		padding: 0;
+		width: 100%;
+	}
+	.camera_caption h2 {
+		font-size: 35px;
+		line-height: 37px;
+	}
+	.camera_wrap .camera_pag .camera_pag_ul { }
+	.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent,
+	.camera_wrap .camera_pag .camera_pag_ul li,
+	.camera_wrap .camera_pag .camera_pag_ul li > span,
+	.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent > span {
+		width: 15px;
+		height: 15px;
+		margin-right: 10px;
+	}
+	.camera_wrap .camera_pag .camera_pag_ul li {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.camera_caption h3 {
+		font-size: 30px;
+		line-height: 30px;
+		margin-bottom: 30px;
+	}
+	.camera_caption p { font-size: 20px;}
+	.camera_caption .bd-ra {
+		width: 30px;
+		height: 30px;
+		font-size: 23px;
+		margin: 15px 10px 0;
+	}
+	.camera_caption .bd-ra span {
+		line-height: 30px;
+	}
+}
+@media only screen and (max-width: 479px) {
+	.camera_caption {}
+	.camera_caption p { display: none; }
+	.camera_caption h3 {
+		font-size: 20px !important;
+		line-height: 20px !important;
+	}
+}
+@media only screen and (max-width: 320px) {
+	.camera_caption{} 
+}

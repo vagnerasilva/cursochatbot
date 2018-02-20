@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax simples chatbot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  </head>
+  <body>
+
+    <h1>Curso Chatbot</h1>
+
+    <div>
+      <label>Mensagem:</label>
+      <input type="text" name="message" />
+      <button type="button">Send</button>
+    </div>
+
+    <div>
+      <ul id="chat"></ul>
+    </div>
+
+    <script type="text/javascript">
+
+      function messageReceived (message) {
+        $('input').val('').focus()
+        $('#chat').append('<li>' + message + '</li>')
+      }
+
+      $('button').click(function () {
+        var options = {
+          type: 'POST',
+          url: '/send',
+          contentType: 'application/json',
+          data: JSON.stringify({ message: $('input').val() }),
+          success: messageReceived
+        };
+
+        $.ajax(options);
+      })
+
+    </script>
+
+  </body>
+</html>

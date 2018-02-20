@@ -1,0 +1,134 @@
+/* Main menu styles
+========================================================*/
+.sf-menu {
+	width: 100%;
+	text-align: center;
+	line-height: 36px;
+	margin-top: auto;
+	margin-top: 32px;
+	border-top: 2px solid #fff;
+	padding-top: 50px;
+	display: table;
+	>li {
+		display: table-cell;
+		table-layout: fixed;
+		position: relative;
+		padding: 0;
+		margin: 0;
+		>a {
+ 			color: #b5b2b2;
+			font-size: 36px;
+			margin-left: 29px;
+			font-family: @slogan-font;
+			margin-bottom: 30px;
+			position: relative;
+			&:hover {
+				color: @wh-color;
+				&:before {
+					background-position: 0 0;
+					top: -46px;
+					height: 21px;
+				}
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				top: -52px;
+				left: 37%;
+				width: 38px;
+				height: 12px;
+				background: url(../images/menu-bullet.png) 0 -21px no-repeat;
+				.transition(.3s);
+			}
+		}
+		&:first-child {padding-right: 0;}
+		&.current > a { 
+			color: @wh-color;
+			&:before {
+					background-position: 0 0;
+					top: -46px;
+					height: 21px;
+				}
+		}
+	}
+}
+
+@media only screen and (max-width: 979px) {
+	.sf-menu li { padding-right: 0; }
+}
+
+/* First level sub-menu styles
+========================================================*/
+.sf-menu ul {
+	position: absolute;
+	top: 66px;
+	left: calc(~'50% - 80px');
+	background: @mn-color;
+	color: @wh-color;
+	min-width: 160px;
+	z-index: 999;
+	display: none;
+	text-align: left;
+	padding-left: 33px;
+	padding-top: 10px;
+	.box-sizing(border-box);
+	&:before {
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: calc(~'50% - 3px');
+		width: 0;
+		height: 0;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 10px solid @mn-color;
+	}
+	li{
+		position: relative;
+		height: 48px;
+		line-height: 48px;
+		.transition(.3s);
+		a{
+			line-height: 12px;
+			padding: 10px 0;
+			color: @wh-color;
+			font-family: @font;
+			font-size: 14px;
+			display: block;
+		}
+		&:hover {
+			>a {color: @mn2-color;}
+		}
+	}
+}
+
+/* Second level sub-menu styles
+========================================================*/
+.sf-menu ul ul{
+	position: absolute;
+	top: 0;
+	left: 126px;
+	z-index: 4;
+	min-width: 157px;
+	border: none;
+	background: #dbb3ae;
+	&:before { display: none; }
+	a:hover {
+		color: @mn-color;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.sf-menu {
+		display: none;
+	}
+	.select-menu {
+		display: block;
+		width: 100%;
+		border-color: @mn-color;
+		color: #666;
+		font-size: 16px;
+		padding: 5px;
+	}
+}
+
+@import "mixins.less";

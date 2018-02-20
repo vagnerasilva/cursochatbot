@@ -1,0 +1,194 @@
+
+// CSS Reset
+@import "normalize.less";
+.clearfix {  
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.container .alpha               { margin-left: 0px; }
+.container .omega               { margin-right: 0px; }
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+// Core variables and mixins
+
+// -------------------------
+@gridColumns:             12;
+//Default 1200px min
+@gridColumnWidth:     70px;
+@gridGutterWidth:     30px;
+@gridRowWidth:        (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+
+//940px grid
+@gridColumnWidth980:         60px;
+@gridGutterWidth980:         20px;
+@gridRowWidth960:            (@gridColumns * @gridColumnWidth980) + (@gridGutterWidth980 * (@gridColumns - 1));
+
+
+// 768px-979px
+@gridColumnWidth768:      44px;
+@gridGutterWidth768:      20px;
+@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+
+// Grid System
+// -----------
+
+// Centered container element
+.container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  .clearfix();
+}
+
+// Table columns
+.tableColumns(@columnSpan: 1) {
+  float: none; // undo default grid column styles
+  width: ((@gridColumnWidth) * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1)) - 16; // 16 is total padding on left and right of table cells
+  margin-left: 0; // undo default grid column styles
+}
+
+// Make a Grid
+// Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
+.makeRow() {
+  margin-left: @gridGutterWidth * -1;
+  .clearfix();
+}
+.makeColumn(@columns: 1, @preffix_: 0) {
+  float: left;
+  margin-left: (@gridColumnWidth * @preffix_) + (@gridGutterWidth * (@preffix_ - 1)) + (@gridGutterWidth * 2);
+  width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+}
+
+// The Grid
+#grid {
+
+  .core (@gridColumnWidth, @gridGutterWidth) {
+
+    .grid_X (@index) when (@index > 0) {
+      .grid_@{index} { .grid_(@index); }
+      .grid_X(@index - 1);
+    }
+    .grid_X (0) {}
+
+    .preffix_X (@index) when (@index > 0) {
+      .preffix_@{index} { .preffix_(@index); }
+      .preffix_X(@index - 1);
+    }
+    .preffix_X (0) {}
+
+    .preffix_ (@columns) {
+      margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
+    }
+
+    .grid_ (@columns) {
+      width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+    }
+
+    .row {
+      margin-left: @gridGutterWidth * -1;
+      .clearfix();
+    }
+
+    [class*="grid_"] {
+      float: left;
+      min-height: 1px; // prevent collapsing columns
+      margin-left: @gridGutterWidth;
+    }
+
+    // Set the container width, and override it for fixed navbars in media queries
+    .container { .grid_(@gridColumns); }
+
+    // generate .grid_X and .preffix_X
+    .grid_X (@gridColumns);
+    .preffix_X (@gridColumns);
+
+  } 
+}
+
+// Grid system and page structure
+
+// Fixed (1170px)
+#grid > .core(@gridColumnWidth, @gridGutterWidth);
+
+
+.container {
+  .container-fixed();
+  .box-sizing(border-box);
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+
+  // Fixed grid
+  #grid > .core(@gridColumnWidth980, @gridGutterWidth980);
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+  // Fixed grid
+  #grid > .core(@gridColumnWidth768, @gridGutterWidth768);
+}
+
+.select-menu {
+	display: none !important;
+}
+
+@media (max-width: 767px) {
+
+// GRID & CONTAINERS
+  // -----------------
+  // Remove width from containers
+  .container {
+    width: 420px;
+    padding: 0 0px;
+  }
+  // Undo negative margin on rows and thumbnails
+  .row {
+    margin-left: 0;
+  }
+  [class*="grid_"] {
+  	float: none;
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    .box-sizing(border-box);
+  }
+
+	.select-menu {
+		display: block !important;
+	}
+}
+
+@media (max-width: 479px) {
+	
+  // Padding to set content in a bit
+  body {
+    padding:0;
+  }  
+
+  // GRID & CONTAINERS
+  // -----------------
+  // Remove width from containers
+  .container {
+    width: 300px;
+    padding: 0 15px;
+  } 
+  // Undo negative margin on rows and thumbnails
+  .row {
+    margin-left: 0;
+  }    
+}
