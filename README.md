@@ -1,23 +1,27 @@
-# cursochatbot
-curso de chatbot 
+Welcome to Glitch
+=================
+
+Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+
+**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+
+Find out more [about Glitch](https://glitch.com/about).
 
 
-Material do Curso ChatBot
-<img src="http://bluedev.com.br/wp-content/uploads/2017/12/chatbot-person.png" class="robo-header__logo" width="128" height="128">
+Your Project
+------------
 
-Autor 
+On the front-end,
+- edit `public/client.js`, `public/style.css` and `views/index.html`
+- drag in `assets`, like images or music, to add them to your project
 
-VAGNER 
+On the back-end,
+- your app starts at `server.js`
+- add frameworks and packages in `package.json`
+- safely store app secrets in `.env` (nobody can see this but you and people you invite)
 
-<h1>0 - Apresentação</h1>
-<h1>1 - Servico de IA utilizando Api Watson</h1>
-<h1>2 - Servico de IA utilizando Api DialogFlow</h1>
-<h1>3 - Servico de Webhook para conexao com Facebook messenger app</h1>
-<h1>4 - Servico de consulta ao MongoDB</h1>
-<h1>5 - Servico de Single Page Aplication </h1>
 
-@FocaNoCodigo
+Made by [Fog Creek](https://fogcreek.com/)
+-------------------
 
-www.focanocodigo.com.br
-
-<img src="http://focanocodigo.esy.es/img/focanocodigo.jpg" class="robo-header__logo" width="100%" height="228">
+\ ゜o゜)ノ
